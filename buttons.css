@@ -1,0 +1,116 @@
+        /* link styling */
+        a { /*
+            button styling that's different
+        	  if the buttons have a certain class or id, lmk,
+        	  otherwise, the code will not work right.
+            */
+
+            background: blue;
+			      background: linear-gradient(90deg, rgba(56, 189, 248, 1) 0%, rgba(2, 132, 199, 1) 38%, rgba(29, 78, 216, 1) 100%);
+            background-size: 400% 400%;
+            
+            animation: gradientA 6s infinite;
+        }
+        
+/************* gradient animation *************/
+  @keyframes gradientA {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/************* border effect *************/
+a:first-child{
+  filter: hue-rotate(15deg);
+}
+a:last-child{
+  filter: hue-rotate(5deg);
+}
+
+a span {
+  position: absolute;
+  display: block;
+}
+
+a:hover span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: topb 4.5s infinite;
+  animation-delay: 2.35s; /*3rd*/
+}
+
+a:hover span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: rightb 4.5s infinite;
+  animation-delay: 3.47s; /*4th*/
+}
+
+a:hover span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: bottomb 4.5s infinite;
+  animation-delay: 0s; /*1st*/
+}
+
+
+a:hover span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: leftb 4.5s infinite;
+  animation-delay: 1.12s; /*2nd*/
+}
+
+@keyframes topb{
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 100%;
+  }
+}
+
+@keyframes rightb{
+  0%{
+    top: -100%;
+  }
+  100%{
+    top: 100%;
+  }
+}
+
+@keyframes bottomb{
+  0%{
+    right: -100%;
+  }
+  100%{
+    right: 100%;
+  }
+}
+
+@keyframes leftb{
+  0%{
+    bottom: -100%;
+  }
+  100%{
+    bottom: 100%;
+  }
+}
